@@ -1,21 +1,16 @@
 import React from 'react';
 import GifItem from './gifItem';
 
-class GifList extends React.Component {
-  constructor (props) {
-    super(props);
-    this.gifItems = props.imageList.map( (image) => {
-      return <GifItem gif={image} />
-    });
-  }
+const GifList = (props) => {
+  const gifItems = props.imageList.map( (image) => {
+    return <GifItem gif={image} />
+  });
 
-  render() {
-    return (
-      <ul className="gifs">
-        {this.gifItems}
-      </ul>
-    );
-  }
-}
+  return (
+    <li>
+      {gifItems}
+    </li>
+  );
+};
 
 export default GifList;
