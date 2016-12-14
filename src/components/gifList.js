@@ -2,14 +2,16 @@ import React from 'react';
 import GifItem from './gifItem';
 
 const GifList = (props) => {
-  const gifItems = props.imageList.map( (image) => {
-    return <GifItem gif={image} />
+  const gifItems = props.gifs.map( (image) => {
+    return <GifItem key={image.id}
+                    gif={image}
+                    onGifSelect={props.onGifSelect} />
   });
 
   return (
-    <li>
+    <ul className="gif-list">
       {gifItems}
-    </li>
+    </ul>
   );
 };
 
